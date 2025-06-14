@@ -54,7 +54,9 @@
     "test:ui": "yarn run test --ui --coverage --open=false",
     "bundle:types": "dts-bundle-generator -o dist/aem-tools-core.d.ts src/index.ts"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "vitest": "^1.0.0"
+  },
   "engines": {
     "node": ">= 20"
   },

@@ -3,7 +3,7 @@
   "name": "aem-monorepo",
   "version": "1.0.0",
   "workspaces": [
-    "aem-tools-core/code",
+    "aem-tools-core",
     "aem-tools-cli"
   ],
   "scripts": {

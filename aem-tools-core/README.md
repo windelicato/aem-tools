@@ -90,10 +90,6 @@ There are a few ways to start using this repository. You can begin by following 
 
 Below, we have outlined the main steps you would need to take to get started.
 
-#### Directory Structure
-
-The package code is located in the `./code` directory. This repository includes a sum function for adding numbers and test examples using Vitest.
-
 ---
 
 #### Install Dependencies
@@ -115,7 +111,7 @@ $ make local-setup
 
 #### Package Development
 
-During development, you can link your package to a project. This is often useful to test out new features or when trying to debug an issue. 
+During development, you can link your package to a project. This is often useful to test out new features or when trying to debug an issue.
 
 ###### Link Package
 
@@ -167,7 +163,7 @@ $ yarn run test:ui
 $ docker compose up
 ```
 
-Then you can visit the Vitest UI in your web browser at [http://localhost:51204/\__vitest__/](http://localhost:51204/__vitest__/).
+Then you can visit the Vitest UI in your web browser at [http://localhost:51204/\_\_vitest\_\_/](http://localhost:51204/__vitest__/).
 
 > [!TIP]
 > You can override the variables in the Docker Compose file, e.g. container name, network name and port mapping. This repository includes a DotEnv example file (`.env.example`) that you can copy to create your DotEnv file and override the Docker Compose variables.
@@ -261,16 +257,16 @@ Remember to use the `npm search <term>` to avoid naming conflicts in the npm reg
 <details>
 <summary><b>2. Update vite.config.ts</b></summary>
 
-In your `./code/vite.config.ts` file, you need to update the library name and filename to your package name:
+In your `./vite.config.ts` file, you need to update the library name and filename to your package name:
 
 ```typescript
 export default defineConfig({
   build: {
     sourcemap: true,
     lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'package-name', // <-- Change here.
-      fileName: 'package-name', // <-- Change here.
+      entry: path.resolve(__dirname, "src/index.ts"),
+      name: "package-name", // <-- Change here.
+      fileName: "package-name", // <-- Change here.
     },
   },
 });
@@ -302,8 +298,8 @@ In `./.github/publish-to-npm-registry.yml` file, you need to update the npm scop
   uses: ./.github/actions/setup-node
   with:
     node-version: ${{ env.node-version }}
-    registry-url: 'https://registry.npmjs.org'
-    scope: '@wolfpackthatcodes' # <-- Change here.
+    registry-url: "https://registry.npmjs.org"
+    scope: "@wolfpackthatcodes" # <-- Change here.
 ```
 
 ##### Update package access
@@ -316,7 +312,7 @@ By default, the publish to npm registry workflow will publish your package as a 
   env:
     NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   with:
-    access: 'restricted' # <-- Add here.
+    access: "restricted" # <-- Add here.
 ```
 
 ##### Generate npm access token
@@ -351,8 +347,8 @@ In `./.github/publish-to-github-packages.yml` file, you need to update the npm s
   uses: ./.github/actions/setup-node
   with:
     node-version: ${{ env.node-version }}
-    registry-url: 'https://npm.pkg.github.com/'
-    scope: '@wolfpackthatcodes' # <-- Change here.
+    registry-url: "https://npm.pkg.github.com/"
+    scope: "@wolfpackthatcodes" # <-- Change here.
 ```
 
 ##### Update package access
@@ -365,7 +361,7 @@ By default the publish to GitHub Packages workflow will publish your package as 
   env:
     NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   with:
-    access: 'restricted' # <-- Add here.
+    access: "restricted" # <-- Add here.
 ```
 
 ##### Don't publish to GitHub Packages

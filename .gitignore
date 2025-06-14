@@ -9,7 +9,7 @@ yarn.lock
 pnpm-lock.yaml
 
 # Build outputs
-aem-tools-core/code/dist/
+aem-tools-core/dist/
 aem-tools-cli/dist/
 dist/
 dist-ssr/
@@ -56,12 +56,10 @@ coverage/
 oclif.manifest.json
 
 # Images (optional, if not source)
-# aem-tools-core/code/images/
-# tmp
 /tmp
 
 # Package tarballs
-aem-tools-core/code/*.tgz
+aem-tools-core/*.tgz
 aem-tools-cli/*.tgz
 *.tgz
 
